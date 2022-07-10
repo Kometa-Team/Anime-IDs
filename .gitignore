@@ -7,7 +7,16 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.idea
+.vscode
 .Python
+/test*
+logs/
+config/*
+!config/overlays/
+config/overlays/*/
+config/overlays/temp.png
+!config/*.template
 build/
 develop-eggs/
 dist/
@@ -109,6 +118,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+pmm-venv/
 
 # Spyder project settings
 .spyderproject
