@@ -63,7 +63,7 @@ with open("pmm_anime_ids.json", "w") as write:
 with open("README.md", "r") as f:
     data = f.readlines()
 
-data[1] = f"Last generated at: {datetime.utcnow().strftime('%B %d, %Y %I:%M %p')}\n"
+data[1] = f"Last generated at: {datetime.utcnow().strftime('%B %d, %Y %I:%M %p')} UTC\n"
 
 with open("README.md", "w") as f:
     f.writelines(data)
