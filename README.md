@@ -1,5 +1,5 @@
 # Plex Meta Manager Anime IDs
-Last generated at: December 19, 2022 01:20 AM UTC
+Last generated at: December 20, 2022 01:23 AM UTC
 
 This is a list for mapping MyAnimeList IDs and AniList IDs to AniDb IDs and then to TVDb IDs or IMDb IDs for us with [Plex-Meta-Manager](https://github.com/meisnate12/Plex-Meta-Manager).
 
