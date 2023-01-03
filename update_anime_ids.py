@@ -48,14 +48,9 @@ with open("pmm_edits.json", "r") as f:
     for anidb_id, ids in json.load(f).items():
         anidb_id = int(anidb_id)
         if anidb_id in anime_dicts:
-            if "tvdb_id" in ids:
-                anime_dicts[anidb_id]["tvdb_id"] = ids["tvdb_id"]
-            if "mal_id" in ids:
-                anime_dicts[anidb_id]["mal_id"] = ids["mal_id"]
-            if "anilist_id" in ids:
-                anime_dicts[anidb_id]["anilist_id"] = ids["anilist_id"]
-            if "imdb_id" in ids:
-                anime_dicts[anidb_id]["imdb_id"] = ids["imdb_id"]
+            for attr in ["tvdb_id", "mal_id", "anilist_id", "imdb_id"]:
+                if attr in ids:
+                    anime_dicts[anidb_id][attr] = ids[attr]
 
 with open("pmm_anime_ids.json", "w") as write:
     json.dump(anime_dicts, write, indent=2)
