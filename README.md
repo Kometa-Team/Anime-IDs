@@ -49,28 +49,28 @@ If that doesn't work you can also submit a Pull Request to the Repo editing the 
 ```
 
 ## Common PMM Convert Erorrs
-If any Solution doesn't work you can always manually make changes using the `pmm_edits.json` file.
+If any **Solution** doesn't work you can always manually make changes using the `pmm_edits.json` file.
 
 - `No TVDb ID or IMDb ID found for AniDB ID: #####`
   - **Issue:** [Anime-Lists](https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml) does not have a TVDb ID or IMDb ID with the given AniDB ID. 
-  - **Solution:**: Raise an Issue or submit a Pull Request to [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) with the ID added.
+  - **Solution:** Raise an Issue or submit a Pull Request to [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) with the ID added.
 
 - `AniDB ID not found for MyAnimeList ID: #####`
   - **Issue:** PMM received a MyAnimeList ID from a Builder and that MyAnimeList ID doesn't have an AniDB Source on [manami-project](https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json). 
-  - **Solution:**: [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) is an automated list and doesn't accept Pull Requests. You can try and update MyAnimeList directly but I don't know when or even if that info will populate back to this list.
+  - **Solution:** [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) is an automated list and doesn't accept Pull Requests. You can try and update MyAnimeList directly but I don't know when or even if that info will populate back to this list.
 
 - `AniDB ID not found for AniList ID: #####`
   - **Issue:** PMM received a AniList ID from a Builder and that AniList ID doesn't have an AniDB Source on [manami-project](https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json). 
-  - **Solution:**: [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) is an automated list and doesn't accept Pull Requests. You can try and update MyAnimeList directly but I don't know when or even if that info will populate back to this list.
+  - **Solution:** [manami-project/anime-offline-database](https://github.com/manami-project/anime-offline-database/) is an automated list and doesn't accept Pull Requests. You can try and update MyAnimeList directly but I don't know when or even if that info will populate back to this list.
 
 - `AniDB ID: {anidb_id} not found`
   - **Issue:** PMM is looking at an AniDB ID that is not found on [Anime-Lists](https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml).
-  - **Solution:**: However PMM is getting the ID is probably wrong either a builder sending bad data or guid tag in plex has a non-numeric character.
+  - **Solution:** However PMM is getting the ID is probably wrong either a builder sending bad data or guid tag in plex has a non-numeric character.
 
 - `AniDB ID not found for IMDb ID: #####`
   - **Issue:** PMM received an IMDb ID from a Builder and that IMDb ID is not attached to any AniDB ID on [Anime-Lists](https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml). 
-  - **Solution:**: Raise an Issue or submit a Pull Request to [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) with the ID added.
+  - **Solution:** Raise an Issue or submit a Pull Request to [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) with the ID added.
 
 - `AniDB ID not found for TVDb ID: #####`
   - **Issue:** PMM received a TVDb ID from a Builder and that TVDb ID is not attached to any AniDB ID on [Anime-Lists](https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml). 
-  - **Solution:**: Raise an Issue or submit a Pull Request to [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) with the ID added.
+  - **Solution:** Raise an Issue or submit a Pull Request to [Anime-Lists/anime-lists](https://github.com/Anime-Lists/anime-lists/) with the ID added.
