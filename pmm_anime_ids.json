@@ -64481,6 +64481,9 @@
     "anilist_id": 142876
   },
   "16165": {
+    "tvdb_id": 355966,
+    "tvdb_season": 0,
+    "imdb_id": "tt15721650",
     "mal_id": 48548,
     "anilist_id": 131520
   },
@@ -68709,6 +68712,8 @@
     "anilist_id": 141881
   },
   "17556": {
+    "tvdb_id": 360761,
+    "tvdb_season": 2,
     "mal_id": 52614,
     "anilist_id": 153344
   },
