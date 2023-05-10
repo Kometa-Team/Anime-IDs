@@ -25,6 +25,14 @@ for anime in AniDBIDs.xpath("//anime"):
             anime_dict["tvdb_season"] = int(tvdb_season)
     except ValueError:
         pass
+    tvdb_epoffset = str(anime.xpath("@episodeoffset")[0])
+    if tvdb_epoffset == "":
+        tvdb_epoffset ='0'
+    try:
+        if tvdb_epoffset:
+            anime_dict["tvdb_epoffset"] = int(tvdb_epoffset)
+    except ValueError:
+        pass
     imdb_id = str(anime.xpath("@imdbid")[0])
     if imdb_id.startswith("tt"):
         anime_dict["imdb_id"] = imdb_id
