@@ -20,6 +20,8 @@ for anime in AniDBIDs.xpath("//anime"):
     except ValueError:
         pass
     tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
+    if tvdb_season == "a":
+        tvdb_season ='-1'
     try:
         if tvdb_season:
             anime_dict["tvdb_season"] = int(tvdb_season)
