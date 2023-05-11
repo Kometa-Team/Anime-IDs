@@ -21,20 +21,17 @@ for anime in AniDBIDs.xpath("//anime"):
         pass
     tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
     if tvdb_season == "a":
-        tvdb_season ='-1'
+        tvdb_season = "-1"
     try:
         if tvdb_season:
             anime_dict["tvdb_season"] = int(tvdb_season)
     except ValueError:
         pass
-    tvdb_epoffset = str(anime.xpath("@episodeoffset")[0])
-    if tvdb_epoffset == "":
-        tvdb_epoffset ='0'
     try:
-        if tvdb_epoffset:
-            anime_dict["tvdb_epoffset"] = int(tvdb_epoffset)
+        anime_dict["tvdb_epoffset"] = int(str(anime.xpath("@episodeoffset")[0]))
     except ValueError:
-        pass
+        anime_dict["tvdb_epoffset"] = 0
+
     imdb_id = str(anime.xpath("@imdbid")[0])
     if imdb_id.startswith("tt"):
         anime_dict["imdb_id"] = imdb_id
