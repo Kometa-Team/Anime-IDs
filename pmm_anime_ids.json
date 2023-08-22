@@ -86961,13 +86961,16 @@
     "tvdb_epoffset": 0
   },
   "18160": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 56350
   },
   "18161": {
     "tvdb_epoffset": 0
   },
   "18162": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 56348,
+    "anilist_id": 168345
   },
   "18163": {
     "tvdb_epoffset": 0
