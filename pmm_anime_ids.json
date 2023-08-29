@@ -38721,7 +38721,7 @@
     "tvdb_epoffset": 0
   },
   "7963": {
-    "tvdb_id": 19243,
+    "tvdb_id": 71776,
     "tvdb_season": 0,
     "tvdb_epoffset": 1,
     "mal_id": 3483
@@ -85890,11 +85890,13 @@
     "anilist_id": 159727
   },
   "17901": {
+    "tvdb_season": 1,
     "tvdb_epoffset": 0,
     "mal_id": 54810,
     "anilist_id": 159728
   },
   "17902": {
+    "tvdb_season": 1,
     "tvdb_epoffset": 0,
     "mal_id": 54005,
     "anilist_id": 159730
