@@ -37806,7 +37806,8 @@
     "tvdb_id": 167921,
     "tvdb_season": 0,
     "tvdb_epoffset": 0,
-    "mal_id": 21945
+    "mal_id": 21945,
+    "anilist_id": 169982
   },
   "7741": {
     "tvdb_id": 167921,
@@ -75452,7 +75453,8 @@
   },
   "15531": {
     "tvdb_epoffset": 0,
-    "anilist_id": 118131
+    "mal_id": 56553,
+    "anilist_id": 169778
   },
   "15532": {
     "tvdb_epoffset": 0,
@@ -85311,7 +85313,9 @@
     "tvdb_epoffset": 0
   },
   "17717": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 24447,
+    "anilist_id": 153395
   },
   "17719": {
     "tvdb_id": 427239,
