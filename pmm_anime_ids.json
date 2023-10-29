@@ -76713,7 +76713,8 @@
     "anilist_id": 120405
   },
   "15801": {
-    "tvdb_epoffset": 0,
+    "tvdb_epoffset": 1,
+    "imdb_id": "tt15420852",
     "mal_id": 43556,
     "anilist_id": 125261
   },
