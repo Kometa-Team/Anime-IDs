@@ -88014,23 +88014,94 @@
     "tvdb_epoffset": 0,
     "mal_id": 53646
   },
-  "18299": {
-    "tvdb_epoffset": 0
-  },
   "18300": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 57433,
+    "anilist_id": 171046
   },
   "18301": {
     "tvdb_epoffset": 0,
-    "mal_id": 57448
+    "mal_id": 57448,
+    "anilist_id": 171109
   },
   "18302": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 57466,
+    "anilist_id": 171110
   },
   "18303": {
     "tvdb_epoffset": 0
   },
   "18304": {
+    "tvdb_epoffset": 0
+  },
+  "18305": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57487,
+    "anilist_id": 171115
+  },
+  "18306": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57499,
+    "anilist_id": 171145
+  },
+  "18307": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57478
+  },
+  "18308": {
+    "tvdb_epoffset": 0
+  },
+  "18309": {
+    "tvdb_epoffset": 0,
+    "mal_id": 54033,
+    "anilist_id": 138612
+  },
+  "18310": {
+    "tvdb_epoffset": 0
+  },
+  "18311": {
+    "tvdb_epoffset": 0
+  },
+  "18312": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57502,
+    "anilist_id": 171144
+  },
+  "18313": {
+    "tvdb_epoffset": 0
+  },
+  "18314": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57508,
+    "anilist_id": 171291
+  },
+  "18315": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57517,
+    "anilist_id": 171400
+  },
+  "18316": {
+    "tvdb_epoffset": 0
+  },
+  "18317": {
+    "tvdb_epoffset": 0,
+    "mal_id": 57524,
+    "anilist_id": 171457
+  },
+  "18318": {
+    "tvdb_epoffset": 0
+  },
+  "18319": {
+    "tvdb_epoffset": 0
+  },
+  "18320": {
+    "tvdb_epoffset": 0
+  },
+  "18321": {
+    "tvdb_epoffset": 0
+  },
+  "18322": {
     "tvdb_epoffset": 0
   }
 }
