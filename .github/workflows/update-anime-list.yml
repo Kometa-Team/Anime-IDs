@@ -32,14 +32,16 @@ jobs:
       - name: Run Update Anime IDs
         run: python update_anime_ids.py
 
-      - name: Commit Changes
+      - name: Check Diff
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit & Push Changes
+        if: steps.verify_diff.outputs.changed == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "Update at ${{ steps.date.outputs.date }} UTC" -a
-
-      - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push origin master

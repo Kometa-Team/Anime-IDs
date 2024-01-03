@@ -1,6 +1,32 @@
-import json, requests
-from datetime import datetime
-from lxml import html
+import json, os, sys
+from datetime import datetime, UTC
+
+if sys.version_info[0] != 3 or sys.version_info[1] < 11:
+    print("Version Error: Version: %s.%s.%s incompatible please use Python 3.11+" % (sys.version_info[0], sys.version_info[1], sys.version_info[2]))
+    sys.exit(0)
+
+try:
+    import requests
+    from git import Repo
+    from lxml import html
+    from pmmutils import logging
+    from pmmutils.args import PMMArgs
+except (ModuleNotFoundError, ImportError):
+    print("Requirements Error: Requirements are not installed")
+    sys.exit(0)
+
+options = [
+    {"arg": "tr", "key": "trace",        "env": "TRACE",        "type": "bool", "default": False, "help": "Run with extra trace logs."},
+    {"arg": "lr", "key": "log-requests", "env": "LOG_REQUESTS", "type": "bool", "default": False, "help": "Run with every request logged."}
+]
+script_name = "PMM Anime IDs"
+base_dir = os.path.dirname(os.path.abspath(__file__))
+pmmargs = PMMArgs("meisnate12/Plex-Meta-Manager-Anime-IDs", base_dir, options, use_nightly=False)
+logger = logging.PMMLogger(script_name, "anime_ids", os.path.join(base_dir, "logs"), is_trace=pmmargs["trace"], log_requests=pmmargs["log-requests"])
+logger.screen_width = 160
+logger.header(pmmargs, sub=True)
+logger.separator("Validating Options", space=False, border=False)
+logger.start()
 
 AniDBIDs = html.fromstring(requests.get("https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml").content)
 Manami = requests.get("https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json").json()
@@ -68,10 +94,12 @@ with open("pmm_edits.json", "r") as f:
 with open("pmm_anime_ids.json", "w") as write:
     json.dump(anime_dicts, write, indent=2)
 
-with open("README.md", "r") as f:
-    data = f.readlines()
+if [item.a_path for item in Repo(path=".").index.diff(None) if item.a_path.endswith(".yml")]:
 
-data[1] = f"Last generated at: {datetime.utcnow().strftime('%B %d, %Y %I:%M %p')} UTC\n"
+    with open("README.md", "r") as f:
+        data = f.readlines()
 
-with open("README.md", "w") as f:
-    f.writelines(data)
+    data[1] = f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
+
+    with open("README.md", "w") as f:
+        f.writelines(data)
