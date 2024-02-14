@@ -16398,6 +16398,7 @@
     "tvdb_id": 71585,
     "tvdb_season": 0,
     "tvdb_epoffset": 0,
+    "imdb_id": "tt4130788",
     "mal_id": 3964,
     "anilist_id": 3964
   },
@@ -16405,6 +16406,7 @@
     "tvdb_id": 71585,
     "tvdb_season": 0,
     "tvdb_epoffset": 0,
+    "imdb_id": "tt4130762",
     "mal_id": 3963,
     "anilist_id": 3963
   },
@@ -87494,6 +87496,8 @@
     "anilist_id": 167404
   },
   "18132": {
+    "tvdb_id": 420280,
+    "tvdb_season": 1,
     "tvdb_epoffset": 0,
     "mal_id": 56285,
     "anilist_id": 151639
