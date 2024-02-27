@@ -42783,8 +42783,7 @@
   "8768": {
     "tvdb_season": 1,
     "tvdb_epoffset": 0,
-    "mal_id": 11543,
-    "anilist_id": 11543
+    "mal_id": 11543
   },
   "8769": {
     "tvdb_season": 1,
@@ -86036,7 +86035,9 @@
   "17821": {
     "tvdb_id": 381536,
     "tvdb_season": 4,
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 57995,
+    "anilist_id": 156082
   },
   "17822": {
     "tvdb_epoffset": 0
@@ -88161,7 +88162,10 @@
     "anilist_id": 170620
   },
   "18280": {
+    "tvdb_id": 376144,
+    "tvdb_season": 0,
     "tvdb_epoffset": 0,
+    "imdb_id": "tt30827040",
     "mal_id": 57184,
     "anilist_id": 170935
   },
