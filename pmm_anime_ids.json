@@ -89266,13 +89266,19 @@
     "mal_id": 58395
   },
   "18533": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 51623,
+    "anilist_id": 145824
   },
   "18534": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 58426,
+    "anilist_id": 175977
   },
   "18535": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 55563,
+    "anilist_id": 166327
   },
   "18536": {
     "tvdb_epoffset": 0
