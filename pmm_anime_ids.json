@@ -75155,8 +75155,9 @@
   },
   "15460": {
     "tvdb_id": 346931,
-    "tvdb_season": 2,
-    "tvdb_epoffset": 0,
+    "tvdb_season": 0,
+    "tvdb_epoffset": 8,
+    "imdb_id": "tt13054188",
     "mal_id": 42387
   },
   "15461": {
