@@ -24,7 +24,7 @@ args = KometaArgs("Kometa-Team/Anime-IDs", base_dir, options, use_nightly=False)
 logger = KometaLogger(script_name, "anime_ids", os.path.join(base_dir, "logs"), is_trace=args["trace"], log_requests=args["log-requests"])
 logger.screen_width = 160
 logger.header(args, sub=True)
-logger.separator("Validating Options", space=False, border=False)
+logger.separator()
 logger.start()
 
 AniDBIDs = html.fromstring(requests.get("https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml").content)
@@ -93,18 +93,23 @@ with open("anime_id_edits.json", "r") as f:
                 if attr in ids:
                     anime_dicts[anidb_id][attr] = ids[attr]
 
-logger.info("Saving Anime IDs")
 with open("anime_ids.json", "w") as write:
     json.dump(anime_dicts, write, indent=2)
 
+logger.separator()
+
 if [item.a_path for item in Repo(path=".").index.diff(None) if item.a_path.endswith(".json")]:
+
+    logger.info("Saving Anime ID Changes")
 
     with open("README.md", "r") as f:
         data = f.readlines()
 
-    data[1] = f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
+    data[2] = f"Last generated at: {datetime.now(UTC).strftime('%B %d, %Y %I:%M %p')} UTC\n"
 
     with open("README.md", "w") as f:
         f.writelines(data)
+else:
+    logger.info("No Anime ID Changes Detected")
 
 logger.separator(f"{script_name} Finished\nTotal Runtime: {logger.runtime()}")
