@@ -18,7 +18,7 @@ options = [
     {"arg": "tr", "key": "trace",        "env": "TRACE",        "type": "bool", "default": False, "help": "Run with extra trace logs."},
     {"arg": "lr", "key": "log-requests", "env": "LOG_REQUESTS", "type": "bool", "default": False, "help": "Run with every request logged."}
 ]
-script_name = "PMM Anime IDs"
+script_name = "Anime IDs"
 base_dir = os.path.dirname(os.path.abspath(__file__))
 args = KometaArgs("Kometa-Team/Anime-IDs", base_dir, options, use_nightly=False)
 logger = KometaLogger(script_name, "anime_ids", os.path.join(base_dir, "logs"), is_trace=args["trace"], log_requests=args["log-requests"])
@@ -32,6 +32,7 @@ Manami = requests.get("https://raw.githubusercontent.com/manami-project/anime-of
 
 anime_dicts = {}
 
+logger.info("Scanning Anime-Lists")
 for anime in AniDBIDs.xpath("//anime"):
     anidb_id = str(anime.xpath("@anidbid")[0])
     if not anidb_id:
@@ -62,6 +63,7 @@ for anime in AniDBIDs.xpath("//anime"):
         anime_dict["imdb_id"] = imdb_id
     anime_dicts[anidb_id] = anime_dict
 
+logger.info("Scanning Manami-Project")
 for anime in Manami["data"]:
     if "sources" not in anime:
         continue
@@ -82,6 +84,7 @@ for anime in Manami["data"]:
         if anilist_id:
             anime_dicts[anidb_id]["anilist_id"] = anilist_id
 
+logger.info("Scanning Anime ID Edits")
 with open("anime_id_edits.json", "r") as f:
     for anidb_id, ids in json.load(f).items():
         anidb_id = int(anidb_id)
@@ -90,6 +93,7 @@ with open("anime_id_edits.json", "r") as f:
                 if attr in ids:
                     anime_dicts[anidb_id][attr] = ids[attr]
 
+logger.info("Saving Anime IDs")
 with open("anime_ids.json", "w") as write:
     json.dump(anime_dicts, write, indent=2)
 
@@ -102,3 +106,5 @@ if [item.a_path for item in Repo(path=".").index.diff(None) if item.a_path.endsw
 
     with open("README.md", "w") as f:
         f.writelines(data)
+
+logger.separator(f"{script_name} Finished\nTotal Runtime: {logger.runtime()}")
