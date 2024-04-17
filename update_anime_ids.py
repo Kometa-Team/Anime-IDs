@@ -9,8 +9,7 @@ try:
     import requests
     from git import Repo
     from lxml import html
-    from pmmutils import logging
-    from pmmutils.args import PMMArgs
+    from kometautils import KometaArgs, KometaLogger
 except (ModuleNotFoundError, ImportError):
     print("Requirements Error: Requirements are not installed")
     sys.exit(0)
@@ -21,10 +20,10 @@ options = [
 ]
 script_name = "PMM Anime IDs"
 base_dir = os.path.dirname(os.path.abspath(__file__))
-pmmargs = PMMArgs("meisnate12/Plex-Meta-Manager-Anime-IDs", base_dir, options, use_nightly=False)
-logger = logging.PMMLogger(script_name, "anime_ids", os.path.join(base_dir, "logs"), is_trace=pmmargs["trace"], log_requests=pmmargs["log-requests"])
+args = KometaArgs("Kometa-Team/Anime-IDs", base_dir, options, use_nightly=False)
+logger = KometaLogger(script_name, "anime_ids", os.path.join(base_dir, "logs"), is_trace=args["trace"], log_requests=args["log-requests"])
 logger.screen_width = 160
-logger.header(pmmargs, sub=True)
+logger.header(args, sub=True)
 logger.separator("Validating Options", space=False, border=False)
 logger.start()
 
@@ -83,7 +82,7 @@ for anime in Manami["data"]:
         if anilist_id:
             anime_dicts[anidb_id]["anilist_id"] = anilist_id
 
-with open("pmm_edits.json", "r") as f:
+with open("anime_id_edits.json", "r") as f:
     for anidb_id, ids in json.load(f).items():
         anidb_id = int(anidb_id)
         if anidb_id in anime_dicts:
@@ -91,10 +90,10 @@ with open("pmm_edits.json", "r") as f:
                 if attr in ids:
                     anime_dicts[anidb_id][attr] = ids[attr]
 
-with open("pmm_anime_ids.json", "w") as write:
+with open("anime_ids.json", "w") as write:
     json.dump(anime_dicts, write, indent=2)
 
-if [item.a_path for item in Repo(path=".").index.diff(None) if item.a_path.endswith(".yml")]:
+if [item.a_path for item in Repo(path=".").index.diff(None) if item.a_path.endswith(".json")]:
 
     with open("README.md", "r") as f:
         data = f.readlines()
