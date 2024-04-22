@@ -88765,6 +88765,8 @@
     "anilist_id": 172964
   },
   "18391": {
+    "tvdb_id": 413480,
+    "tvdb_season": 2,
     "tvdb_epoffset": 0,
     "mal_id": 51898,
     "anilist_id": 146543
@@ -89625,6 +89627,12 @@
     "tvdb_epoffset": 0
   },
   "18588": {
+    "tvdb_epoffset": 0
+  },
+  "18589": {
+    "tvdb_epoffset": 0
+  },
+  "18590": {
     "tvdb_epoffset": 0
   }
 }
