@@ -29,6 +29,7 @@ logger.start()
 
 AniDBIDs = html.fromstring(requests.get("https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml").content)
 Manami = requests.get("https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json").json()
+AnimeAggregations = requests.get("https://raw.githubusercontent.com/notseteve/AnimeAggregations/main/aggregate/AnimeToExternal.json").json()
 
 anime_dicts = {}
 
@@ -83,6 +84,40 @@ for anime in Manami["data"]:
             anime_dicts[anidb_id]["mal_id"] = mal_id
         if anilist_id:
             anime_dicts[anidb_id]["anilist_id"] = anilist_id
+
+logger.info("Scanning AnimeAggregations")
+for anidb_id, ids in AnimeAggregations["animes"].items():
+    if "resources" in ids:
+        anidb_id = int(anidb_id)
+        if anidb_id and anidb_id in anime_dicts:
+            if "MAL" in ids["resources"]:
+                for mal_id in ids["resources"]["MAL"]:
+                    mal_id = int(mal_id)
+                    if "mal_id" not in anime_dicts[anidb_id]:
+                        anime_dicts[anidb_id]["mal_id"] = mal_id
+                    elif str(mal_id) not in str(anime_dicts[anidb_id]["mal_id"]).split(","):
+                        anime_dicts[anidb_id]["mal_id"] = f"{anime_dicts[anidb_id]['mal_id']},{mal_id}"
+            if "IMDB" in ids["resources"]:
+                for imdb_id in ids["resources"]["IMDB"]:
+                    if str(imdb_id).startswith("tt"):
+                        if "imdb_id" not in anime_dicts[anidb_id]:
+                            anime_dicts[anidb_id]["imdb_id"] = imdb_id
+                        elif str(imdb_id) not in str(anime_dicts[anidb_id]["imdb_id"]).split(","):
+                            anime_dicts[anidb_id]["imdb_id"] = f"{anime_dicts[anidb_id]['imdb_id']},{imdb_id}"
+            if "TMDB" in ids["resources"]:
+                for tmdb_id in ids["resources"]["TMDB"]:
+                    if str(tmdb_id).startswith("movie/"):
+                        tmdb_id = int(tmdb_id[6:])
+                        if "tmdb_movie_id" not in anime_dicts[anidb_id]:
+                            anime_dicts[anidb_id]["tmdb_movie_id"] = tmdb_id
+                        elif str(tmdb_id) not in str(anime_dicts[anidb_id]["tmdb_movie_id"]).split(","):
+                            anime_dicts[anidb_id]["tmdb_movie_id"] = f"{anime_dicts[anidb_id]['tmdb_movie_id']},{tmdb_id}"
+                    elif str(tmdb_id).startswith("tv/"):
+                        tmdb_id = int(tmdb_id[3:])
+                        if "tmdb_tv_id" not in anime_dicts[anidb_id]:
+                            anime_dicts[anidb_id]["tmdb_tv_id"] = tmdb_id
+                        elif str(tmdb_id) not in str(anime_dicts[anidb_id]["tmdb_tv_id"]).split(","):
+                            anime_dicts[anidb_id]["tmdb_tv_id"] = f"{anime_dicts[anidb_id]['tmdb_tv_id']},{tmdb_id}"
 
 logger.info("Scanning Anime ID Edits")
 with open("anime_id_edits.json", "r") as f:
