@@ -29,6 +29,7 @@ logger.start()
 
 AniDBIDs = html.fromstring(requests.get("https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml").content)
 Manami = requests.get("https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json").json()
+Aggregations = requests.get("https://raw.githubusercontent.com/notseteve/AnimeAggregations/main/aggregate/AnimeToExternal.json").json()
 
 anime_dicts = {}
 
@@ -38,11 +39,12 @@ for anime in AniDBIDs.xpath("//anime"):
     if not anidb_id:
         continue
     anidb_id = int(anidb_id[1:]) if anidb_id[0] == "a" else int(anidb_id)
-    anime_dict = {}
+    if anidb_id not in anime_dicts:
+        anime_dicts[anidb_id] = {}
     tvdb_id = str(anime.xpath("@tvdbid")[0])
     try:
         if tvdb_id:
-            anime_dict["tvdb_id"] = int(tvdb_id)
+            anime_dicts[anidb_id]["tvdb_id"] = int(tvdb_id)
     except ValueError:
         pass
     tvdb_season = str(anime.xpath("@defaulttvdbseason")[0])
@@ -50,18 +52,18 @@ for anime in AniDBIDs.xpath("//anime"):
         tvdb_season = "-1"
     try:
         if tvdb_season:
-            anime_dict["tvdb_season"] = int(tvdb_season)
+            anime_dicts[anidb_id]["tvdb_season"] = int(tvdb_season)
     except ValueError:
         pass
     try:
-        anime_dict["tvdb_epoffset"] = int(str(anime.xpath("@episodeoffset")[0]))
+        anime_dicts[anidb_id]["tvdb_epoffset"] = int(str(anime.xpath("@episodeoffset")[0]))
     except ValueError:
-        anime_dict["tvdb_epoffset"] = 0
+        anime_dicts[anidb_id]["tvdb_epoffset"] = 0
 
     imdb_id = str(anime.xpath("@imdbid")[0])
     if imdb_id.startswith("tt"):
-        anime_dict["imdb_id"] = imdb_id
-    anime_dicts[anidb_id] = anime_dict
+        anime_dicts[anidb_id]["imdb_id"] = imdb_id
+
 
 logger.info("Scanning Manami-Project")
 for anime in Manami["data"]:
@@ -84,12 +86,26 @@ for anime in Manami["data"]:
         if anilist_id:
             anime_dicts[anidb_id]["anilist_id"] = anilist_id
 
+logger.info("Scanning AnimeAggregations")
+for anidb_id, anime in Aggregations["animes"].items():
+    anidb_id = int(anidb_id)
+    if anidb_id not in anime_dicts:
+        anime_dicts[anidb_id] = {}
+    if "IMDB" in anime["resources"] and "imdb_id" not in anime_dicts[anidb_id]:
+        anime_dicts[anidb_id]["imdb_id"] = ",".join(anime["resources"]["IMDB"])
+    if "MAL" in anime["resources"] and "mal_id" not in anime_dicts[anidb_id]:
+        anime_dicts[anidb_id]["mal_id"] = int(anime["resources"]["MAL"][0]) if len(anime["resources"]["MAL"][0]) == 1 else ",".join(anime["resources"]["MAL"])
+    if "TMDB" in anime["resources"] and anime["resources"]["TMDB"][0].startswith("tv") and "tmdb_show_id" not in anime_dicts[anidb_id]:
+        anime_dicts[anidb_id]["tmdb_show_id"] = int(anime["resources"]["TMDB"][0][3:])
+    if "TMDB" in anime["resources"] and anime["resources"]["TMDB"][0].startswith("movie") and "tmdb_movie_id" not in anime_dicts[anidb_id]:
+        anime_dicts[anidb_id]["tmdb_movie_id"] = int(anime["resources"]["TMDB"][0][6:])
+
 logger.info("Scanning Anime ID Edits")
 with open("anime_id_edits.json", "r") as f:
     for anidb_id, ids in json.load(f).items():
         anidb_id = int(anidb_id)
         if anidb_id in anime_dicts:
-            for attr in ["tvdb_id", "mal_id", "anilist_id", "imdb_id"]:
+            for attr in ["tvdb_id", "mal_id", "anilist_id", "imdb_id", "tmdb_show_id", "tmdb_movie_id"]:
                 if attr in ids:
                     anime_dicts[anidb_id][attr] = ids[attr]
 
