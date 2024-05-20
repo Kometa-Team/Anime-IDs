@@ -62517,10 +62517,6 @@
     "mal_id": 33733,
     "anilist_id": 21879
   },
-  "12295": {
-    "tvdb_epoffset": 0,
-    "mal_id": "33736"
-  },
   "12296": {
     "tvdb_id": 402182,
     "tvdb_season": 1,
@@ -87561,9 +87557,6 @@
     "imdb_id": "tt7263328",
     "tmdb_show_id": 72517
   },
-  "17209": {
-    "tvdb_epoffset": 0
-  },
   "17211": {
     "tvdb_id": 416902,
     "tvdb_season": 1,
@@ -94658,5 +94651,44 @@
   "18625": {
     "tvdb_epoffset": 0
   },
+  "18626": {
+    "tvdb_epoffset": 0,
+    "mal_id": 58849
+  },
+  "18627": {
+    "tvdb_epoffset": 0,
+    "mal_id": 58853,
+    "anilist_id": 177552
+  },
+  "18628": {
+    "tvdb_epoffset": 0,
+    "mal_id": 58854,
+    "anilist_id": 177581
+  },
+  "18629": {
+    "tvdb_epoffset": 0
+  },
+  "18630": {
+    "tvdb_epoffset": 0
+  },
+  "18631": {
+    "tvdb_epoffset": 0
+  },
+  "18632": {
+    "tvdb_epoffset": 0
+  },
+  "18633": {
+    "tvdb_epoffset": 0
+  },
+  "18634": {
+    "tvdb_epoffset": 0
+  },
+  "18635": {
+    "tvdb_epoffset": 0
+  },
+  "12295": {
+    "mal_id": "33736"
+  },
+  "17209": {},
   "18455": {}
 }
