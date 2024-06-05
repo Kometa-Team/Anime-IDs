@@ -94802,6 +94802,7 @@
   "18651": {
     "tvdb_epoffset": 0,
     "mal_id": 56960,
+    "anilist_id": 177512,
     "tmdb_show_id": 250656
   },
   "18652": {
@@ -94856,7 +94857,8 @@
   },
   "18663": {
     "tvdb_epoffset": 0,
-    "mal_id": "58143",
+    "mal_id": 58143,
+    "anilist_id": 175052,
     "tmdb_show_id": 223515
   },
   "18664": {
