@@ -83702,10 +83702,12 @@
     "anilist_id": 135432
   },
   "16380": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 70900,
+    "tvdb_season": 1,
+    "tvdb_epoffset": 8,
+    "imdb_id": "tt15411068",
     "mal_id": 47410,
-    "anilist_id": 132634,
-    "imdb_id": "tt15411068"
+    "anilist_id": 132634
   },
   "16381": {
     "tvdb_epoffset": 0,
