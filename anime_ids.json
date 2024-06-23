@@ -92554,7 +92554,9 @@
   "18159": {
     "tvdb_id": 379282,
     "tvdb_season": 2,
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 55692,
+    "anilist_id": 141868
   },
   "18160": {
     "tvdb_season": 1,
@@ -94779,7 +94781,8 @@
     "anilist_id": 177580
   },
   "18637": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 59049
   },
   "18638": {
     "tvdb_epoffset": 0,
@@ -94949,7 +94952,8 @@
   },
   "18675": {
     "tvdb_epoffset": 0,
-    "mal_id": 59002
+    "mal_id": 59002,
+    "anilist_id": 178100
   },
   "18676": {
     "tvdb_epoffset": 0,
@@ -94968,7 +94972,8 @@
   },
   "18679": {
     "tvdb_epoffset": 0,
-    "mal_id": 59084
+    "mal_id": 59084,
+    "anilist_id": 155315
   },
   "18680": {
     "tvdb_epoffset": 0
