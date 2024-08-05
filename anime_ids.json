@@ -95640,24 +95640,78 @@
   "18775": {
     "tvdb_epoffset": 0
   },
+  "18776": {
+    "tvdb_epoffset": 0,
+    "mal_id": 59406,
+    "anilist_id": 179838
+  },
+  "18777": {
+    "tvdb_epoffset": 0,
+    "mal_id": "59415"
+  },
+  "18778": {
+    "tvdb_epoffset": 0,
+    "mal_id": 59398,
+    "anilist_id": 179844,
+    "tmdb_show_id": 156571
+  },
+  "18779": {
+    "tvdb_epoffset": 0,
+    "mal_id": 59327,
+    "tmdb_show_id": 259337
+  },
+  "18780": {
+    "tvdb_epoffset": 0
+  },
+  "18781": {
+    "tvdb_epoffset": 0
+  },
+  "18782": {
+    "tvdb_epoffset": 0
+  },
+  "18783": {
+    "tvdb_epoffset": 0
+  },
+  "18784": {
+    "tvdb_epoffset": 0
+  },
+  "18785": {
+    "tvdb_epoffset": 0
+  },
+  "18786": {
+    "tvdb_epoffset": 0,
+    "mal_id": 59425
+  },
+  "18787": {
+    "tvdb_epoffset": 0
+  },
+  "18788": {
+    "tvdb_epoffset": 0
+  },
+  "18789": {
+    "tvdb_epoffset": 0
+  },
+  "18790": {
+    "tvdb_epoffset": 0
+  },
+  "18791": {
+    "tvdb_epoffset": 0
+  },
+  "18792": {
+    "tvdb_epoffset": 0
+  },
+  "18793": {
+    "tvdb_epoffset": 0
+  },
+  "18794": {
+    "tvdb_epoffset": 0
+  },
+  "18795": {
+    "tvdb_epoffset": 0
+  },
   "12295": {
     "mal_id": "33736"
   },
   "17209": {},
-  "18455": {},
-  "18776": {},
-  "18777": {
-    "mal_id": "59415"
-  },
-  "18778": {
-    "mal_id": "59398",
-    "tmdb_show_id": 156571
-  },
-  "18779": {
-    "mal_id": "59327",
-    "tmdb_show_id": 259337
-  },
-  "18780": {},
-  "18781": {},
-  "18782": {}
+  "18455": {}
 }
