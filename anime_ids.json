@@ -93254,7 +93254,9 @@
     "tmdb_movie_id": 1209217
   },
   "18220": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 74796,
+    "tvdb_season": 17,
+    "tvdb_epoffset": 26,
     "mal_id": 56784,
     "anilist_id": 169755
   },
