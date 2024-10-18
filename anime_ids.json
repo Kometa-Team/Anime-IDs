@@ -86576,7 +86576,8 @@
   },
   "16946": {
     "tvdb_epoffset": 0,
-    "mal_id": 50799
+    "mal_id": 50799,
+    "anilist_id": 179870
   },
   "16947": {
     "tvdb_id": 405920,
@@ -90449,7 +90450,8 @@
   },
   "17701": {
     "tvdb_epoffset": 0,
-    "mal_id": 53514
+    "mal_id": 53514,
+    "anilist_id": 179871
   },
   "17702": {
     "tvdb_id": 426834,
@@ -93301,6 +93303,7 @@
     "mal_id": "56777"
   },
   "18224": {
+    "tvdb_season": 1,
     "tvdb_epoffset": 0,
     "tmdb_movie_id": 1139047
   },
