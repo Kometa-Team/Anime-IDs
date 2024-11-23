@@ -97067,7 +97067,9 @@
     "tvdb_epoffset": 0
   },
   "18965": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 60185,
+    "anilist_id": 183471
   },
   "18966": {
     "tvdb_epoffset": 0
@@ -97114,7 +97116,9 @@
     "mal_id": 35121
   },
   "18979": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 60275,
+    "anilist_id": 184141
   },
   "18980": {
     "tvdb_epoffset": 0,
