@@ -1,4 +1,4 @@
 GitPython==3.1.43
-lxml==5.2.2
+lxml==5.3.0
 kometautils==0.3.4
 requests==2.32.3
