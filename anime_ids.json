@@ -96335,6 +96335,8 @@
     "anilist_id": 179344
   },
   "18754": {
+    "tvdb_id": 271591,
+    "tvdb_season": 13,
     "tvdb_epoffset": 0,
     "mal_id": 59010,
     "anilist_id": 177922,
@@ -97905,6 +97907,8 @@
     "tvdb_epoffset": 0
   },
   "19078": {
+    "tvdb_id": 402033,
+    "tvdb_season": 3,
     "tvdb_epoffset": 0,
     "mal_id": "56752",
     "tmdb_show_id": 123542
@@ -97938,6 +97942,8 @@
     "tvdb_epoffset": 0
   },
   "19086": {
+    "tvdb_id": 271591,
+    "tvdb_season": 14,
     "tvdb_epoffset": 0
   },
   "19087": {
