@@ -98260,7 +98260,9 @@
     "anilist_id": 186181
   },
   "19111": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 60774,
+    "anilist_id": 186169
   },
   "19112": {
     "tvdb_epoffset": 0,
