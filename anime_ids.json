@@ -59533,7 +59533,8 @@
   },
   "11618": {
     "tvdb_epoffset": 0,
-    "mal_id": "31512"
+    "mal_id": 31512,
+    "anilist_id": 111289
   },
   "11619": {
     "tvdb_epoffset": 0,
@@ -98158,7 +98159,8 @@
   },
   "19076": {
     "tvdb_epoffset": 0,
-    "mal_id": "60273"
+    "mal_id": 60273,
+    "anilist_id": 187305
   },
   "19077": {
     "tvdb_epoffset": 0,
@@ -98493,7 +98495,8 @@
   },
   "19150": {
     "tvdb_epoffset": 0,
-    "mal_id": "60565",
+    "mal_id": 60565,
+    "anilist_id": 186757,
     "tmdb_show_id": 283993
   },
   "19151": {
