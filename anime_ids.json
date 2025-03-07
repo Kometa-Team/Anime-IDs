@@ -47149,6 +47149,7 @@
     "tvdb_season": 1,
     "tvdb_epoffset": 0,
     "imdb_id": "tt3392330",
+    "anilist_id": 17677,
     "mal_id": "13639,14853,17677,17679,19573"
   },
   "9126": {
@@ -95870,7 +95871,8 @@
   },
   "18612": {
     "tvdb_epoffset": 0,
-    "mal_id": "58812"
+    "mal_id": 58812,
+    "anilist_id": 177476
   },
   "18613": {
     "tvdb_epoffset": 0
