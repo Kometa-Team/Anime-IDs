@@ -92606,6 +92606,8 @@
     "tmdb_show_id": 231357
   },
   "18000": {
+    "tvdb_id": 433634,
+    "tvdb_season": 1,
     "tvdb_epoffset": 0,
     "mal_id": 54846,
     "anilist_id": 156111,
@@ -96174,6 +96176,8 @@
     "tmdb_show_id": 250389
   },
   "18663": {
+    "tvdb_id": 433634,
+    "tvdb_season": 0,
     "tvdb_epoffset": 0,
     "mal_id": 58143,
     "anilist_id": 175052,
