@@ -99467,9 +99467,6 @@
     "mal_id": 61578,
     "anilist_id": 191656
   },
-  "19309": {
-    "tvdb_epoffset": 0
-  },
   "19310": {
     "tvdb_epoffset": 0,
     "mal_id": 61587,
@@ -99529,6 +99526,14 @@
     "tvdb_epoffset": 0,
     "mal_id": 60572,
     "anilist_id": 191974
+  },
+  "19324": {
+    "tvdb_epoffset": 0,
+    "mal_id": 61637,
+    "anilist_id": 192261
+  },
+  "19325": {
+    "tvdb_epoffset": 0
   },
   "12295": {
     "mal_id": "33736"
