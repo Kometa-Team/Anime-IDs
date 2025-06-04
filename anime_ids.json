@@ -88202,7 +88202,9 @@
     "anilist_id": 143866
   },
   "17135": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 49202,
+    "anilist_id": 132821
   },
   "17136": {
     "tvdb_epoffset": 0,
@@ -96573,8 +96575,8 @@
   },
   "18691": {
     "tvdb_epoffset": 0,
+    "mal_id": 61730,
     "anilist_id": 182556,
-    "mal_id": "57442",
     "tmdb_show_id": 218642
   },
   "18692": {
@@ -99797,6 +99799,7 @@
   },
   "19349": {
     "tvdb_epoffset": 0,
+    "mal_id": 61726,
     "anilist_id": 168628
   },
   "19350": {
@@ -99808,7 +99811,9 @@
     "tvdb_epoffset": 0
   },
   "19352": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 54145,
+    "anilist_id": 191994
   },
   "19353": {
     "tvdb_epoffset": 0
