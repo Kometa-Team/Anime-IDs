@@ -27,14 +27,11 @@ logger.header(args, sub=True)
 logger.separator()
 logger.start()
 
-AniDBIDs = html.fromstring(requests.get("https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml").content)
-Manami = requests.get("https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json").json()
-Aggregations = requests.get("https://raw.githubusercontent.com/notseteve/AnimeAggregations/main/aggregate/AnimeToExternal.json").json()
-
 anime_dicts = {}
 
 logger.info("Scanning Anime-Lists")
-for anime in AniDBIDs.xpath("//anime"):
+anidb_url = "https://raw.githubusercontent.com/Anime-Lists/anime-lists/master/anime-list-master.xml"
+for anime in html.fromstring(requests.get(anidb_url).content).xpath("//anime"):
     anidb_id = str(anime.xpath("@anidbid")[0])
     if not anidb_id:
         continue
@@ -65,8 +62,14 @@ for anime in AniDBIDs.xpath("//anime"):
         anime_dicts[anidb_id]["imdb_id"] = imdb_id
 
 
+manami_url = "https://api.github.com/repos/manami-project/anime-offline-database/releases"
 logger.info("Scanning Manami-Project")
-for anime in Manami["data"]:
+manami_release_url = None
+for asset in requests.get(requests.get(manami_url).json()[0]["assets_url"]).json():
+    if asset["name"] == "anime-offline-database.json":
+        manami_release_url = asset["browser_download_url"]
+        break
+for anime in requests.get(manami_release_url).json()["data"]:
     if "sources" not in anime:
         continue
 
@@ -87,7 +90,8 @@ for anime in Manami["data"]:
             anime_dicts[anidb_id]["anilist_id"] = anilist_id
 
 logger.info("Scanning AnimeAggregations")
-for anidb_id, anime in Aggregations["animes"].items():
+aggregations_url = "https://raw.githubusercontent.com/notseteve/AnimeAggregations/main/aggregate/AnimeToExternal.json"
+for anidb_id, anime in requests.get(aggregations_url).json()["animes"].items():
     anidb_id = int(anidb_id)
     if anidb_id not in anime_dicts:
         anime_dicts[anidb_id] = {}
