@@ -99739,16 +99739,39 @@
     "tvdb_epoffset": 0,
     "mal_id": "61950"
   },
+  "19501": {
+    "tvdb_epoffset": 0,
+    "mal_id": "62126"
+  },
+  "19502": {
+    "tvdb_epoffset": 0,
+    "mal_id": "62092",
+    "tmdb_show_id": 296538
+  },
+  "19503": {
+    "tvdb_epoffset": 0
+  },
+  "19504": {
+    "tvdb_epoffset": 0
+  },
+  "19505": {
+    "tvdb_epoffset": 0
+  },
+  "19506": {
+    "tvdb_epoffset": 0
+  },
+  "19507": {
+    "tvdb_epoffset": 0
+  },
+  "19508": {
+    "tvdb_epoffset": 0
+  },
+  "19509": {
+    "tvdb_epoffset": 0
+  },
   "12295": {
     "mal_id": "33736"
   },
   "17209": {},
-  "18455": {},
-  "19501": {
-    "mal_id": "62126"
-  },
-  "19502": {
-    "mal_id": "62092",
-    "tmdb_show_id": 296538
-  }
+  "18455": {}
 }
