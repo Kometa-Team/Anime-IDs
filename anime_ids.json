@@ -99765,7 +99765,9 @@
     "mal_id": 62146
   },
   "19507": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 60226,
+    "anilist_id": 183661
   },
   "19508": {
     "tvdb_epoffset": 0
