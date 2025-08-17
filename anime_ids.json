@@ -97374,9 +97374,6 @@
     "mal_id": 60294,
     "anilist_id": 184280
   },
-  "18987": {
-    "tvdb_epoffset": 0
-  },
   "18988": {
     "tvdb_epoffset": 0,
     "mal_id": 60301,
@@ -99287,9 +99284,6 @@
     "imdb_id": "tt37364267",
     "tmdb_movie_id": 1500531
   },
-  "19390": {
-    "tvdb_epoffset": 0
-  },
   "19391": {
     "tvdb_epoffset": 0
   },
@@ -99848,6 +99842,18 @@
     "tvdb_epoffset": 0
   },
   "19523": {
+    "tvdb_epoffset": 0
+  },
+  "19524": {
+    "tvdb_epoffset": 0
+  },
+  "19525": {
+    "tvdb_epoffset": 0
+  },
+  "19526": {
+    "tvdb_epoffset": 0
+  },
+  "19527": {
     "tvdb_epoffset": 0
   },
   "12295": {
