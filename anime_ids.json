@@ -70684,7 +70684,7 @@
   "13894": {
     "tvdb_id": 262090,
     "tvdb_season": 0,
-    "tvdb_epoffset": 0,
+    "tvdb_epoffset": 12,
     "imdb_id": "tt10443844,tt11078434,tt11078522",
     "mal_id": "37440,37441,37442"
   },
@@ -78329,7 +78329,7 @@
   "15308": {
     "tvdb_id": 262090,
     "tvdb_season": 0,
-    "tvdb_epoffset": 0,
+    "tvdb_epoffset": 18,
     "imdb_id": "tt11433874",
     "mal_id": 40858,
     "anilist_id": 113917
