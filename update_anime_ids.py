@@ -98,11 +98,15 @@ for anidb_id, anime in requests.get(aggregations_url).json()["animes"].items():
     if "IMDB" in anime["resources"] and "imdb_id" not in anime_dicts[anidb_id]:
         anime_dicts[anidb_id]["imdb_id"] = ",".join(anime["resources"]["IMDB"])
     if "MAL" in anime["resources"] and "mal_id" not in anime_dicts[anidb_id]:
-        anime_dicts[anidb_id]["mal_id"] = int(anime["resources"]["MAL"][0]) if len(anime["resources"]["MAL"][0]) == 1 else ",".join(anime["resources"]["MAL"])
-    if "TMDB" in anime["resources"] and anime["resources"]["TMDB"][0].startswith("tv") and "tmdb_show_id" not in anime_dicts[anidb_id]:
-        anime_dicts[anidb_id]["tmdb_show_id"] = int(anime["resources"]["TMDB"][0][3:])
-    if "TMDB" in anime["resources"] and anime["resources"]["TMDB"][0].startswith("movie") and "tmdb_movie_id" not in anime_dicts[anidb_id]:
-        anime_dicts[anidb_id]["tmdb_movie_id"] = int(anime["resources"]["TMDB"][0][6:])
+        anime_dicts[anidb_id]["mal_id"] = int(anime["resources"]["MAL"][0]) if len(anime["resources"]["MAL"]) == 1 else ",".join(anime["resources"]["MAL"])
+    if "TMDB" in anime["resources"]:
+        tmdb_tv_id = next((r for r in anime["resources"]["TMDB"] if r.startswith("tv")), None)
+        if tmdb_tv_id:
+            anime_dicts[anidb_id]["tmdb_show_id"] = int(tmdb_tv_id[3:])
+        else:
+            tmdb_movie_ids = [r[6:] for r in anime["resources"]["TMDB"] if r.startswith("movie")]
+            anime_dicts[anidb_id]["tmdb_movie_id"] = int(tmdb_movie_ids[0]) if len(tmdb_movie_ids) == 1 else ",".join(tmdb_movie_ids)
+
 
 logger.info("Scanning Anime ID Edits")
 with open("anime_id_edits.json", "r") as f:

@@ -17,10 +17,10 @@ jobs:
         run: echo "date=$(date +'%B %d, %Y %I:%M %p')" >> $GITHUB_OUTPUT
 
       - name: Check Out Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.x"
 
