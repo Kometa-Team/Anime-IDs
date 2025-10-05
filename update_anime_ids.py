@@ -88,7 +88,7 @@ for anime in requests.get(manami_release_url).json()["data"]:
             anime_dicts[anidb_id]["mal_id"] = mal_id
         if anilist_id:
             anime_dicts[anidb_id]["anilist_id"] = anilist_id
-
+"""
 logger.info("Scanning AnimeAggregations")
 aggregations_url = "https://raw.githubusercontent.com/notseteve/AnimeAggregations/main/aggregate/AnimeToExternal.json"
 for anidb_id, anime in requests.get(aggregations_url).json()["animes"].items():
@@ -106,7 +106,7 @@ for anidb_id, anime in requests.get(aggregations_url).json()["animes"].items():
         else:
             tmdb_movie_ids = [r[6:] for r in anime["resources"]["TMDB"] if r.startswith("movie")]
             anime_dicts[anidb_id]["tmdb_movie_id"] = int(tmdb_movie_ids[0]) if len(tmdb_movie_ids) == 1 else ",".join(tmdb_movie_ids)
-
+"""
 
 logger.info("Scanning Anime ID Edits")
 with open("anime_id_edits.json", "r") as f:
