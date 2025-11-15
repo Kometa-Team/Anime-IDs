@@ -41142,7 +41142,7 @@
   },
   "8587": {
     "tvdb_id": 257766,
-    "tvdb_season": 1,
+    "tvdb_season": 0,
     "tvdb_epoffset": 0,
     "mal_id": 11313,
     "anilist_id": 11313
@@ -48587,7 +48587,7 @@
   "10162": {
     "tvdb_id": 257766,
     "tvdb_season": 0,
-    "tvdb_epoffset": 0,
+    "tvdb_epoffset": 2,
     "mal_id": 20649,
     "anilist_id": 20715
   },
