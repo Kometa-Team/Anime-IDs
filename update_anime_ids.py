@@ -65,29 +65,58 @@ for anime in html.fromstring(requests.get(anidb_url).content).xpath("//anime"):
 manami_url = "https://api.github.com/repos/manami-project/anime-offline-database/releases"
 logger.info("Scanning Manami-Project")
 manami_release_url = None
-for asset in requests.get(requests.get(manami_url).json()[0]["assets_url"]).json():
-    if asset["name"] == "anime-offline-database.json":
-        manami_release_url = asset["browser_download_url"]
-        break
-for anime in requests.get(manami_release_url).json()["data"]:
-    if "sources" not in anime:
-        continue
 
-    anidb_id = None
-    mal_id = None
-    anilist_id = None
-    for source in anime["sources"]:
-        if "anidb.net" in source:
-            anidb_id = int(source.partition("anime/")[2])
-        elif "myanimelist" in source:
-            mal_id = int((source.partition("anime/")[2]))
-        elif "anilist.co" in source:
-            anilist_id = int((source.partition("anime/")[2]))
-    if anidb_id and anidb_id in anime_dicts:
-        if mal_id:
-            anime_dicts[anidb_id]["mal_id"] = mal_id
-        if anilist_id:
-            anime_dicts[anidb_id]["anilist_id"] = anilist_id
+# Find the .jsonl asset
+try:
+    assets = requests.get(requests.get(manami_url).json()[0]["assets_url"]).json()
+    for asset in assets:
+        if asset["name"] == "anime-offline-database.jsonl":
+            manami_release_url = asset["browser_download_url"]
+            break
+except Exception as e:
+    logger.error(f"Error finding Manami release: {e}")
+
+if manami_release_url:
+    # Use iter_lines for .jsonl processing
+    with requests.get(manami_release_url, stream=True) as r:
+        r.raise_for_status()
+        for line in r.iter_lines():
+            if not line:
+                continue
+            
+            try:
+                anime = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            if "sources" not in anime:
+                continue
+
+            anidb_id = None
+            mal_id = None
+            anilist_id = None
+            for source in anime["sources"]:
+                if "anidb.net" in source:
+                    try:
+                        anidb_id = int(source.partition("anime/")[2])
+                    except ValueError: pass
+                elif "myanimelist" in source:
+                    try:
+                        mal_id = int((source.partition("anime/")[2]))
+                    except ValueError: pass
+                elif "anilist.co" in source:
+                    try:
+                        anilist_id = int((source.partition("anime/")[2]))
+                    except ValueError: pass
+            
+            if anidb_id and anidb_id in anime_dicts:
+                if mal_id:
+                    anime_dicts[anidb_id]["mal_id"] = mal_id
+                if anilist_id:
+                    anime_dicts[anidb_id]["anilist_id"] = anilist_id
+else:
+    logger.warning("Could not find anime-offline-database.jsonl in Manami releases")
+
 """
 logger.info("Scanning AnimeAggregations")
 aggregations_url = "https://raw.githubusercontent.com/notseteve/AnimeAggregations/main/aggregate/AnimeToExternal.json"
