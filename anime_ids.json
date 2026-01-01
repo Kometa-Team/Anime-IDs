@@ -93132,7 +93132,9 @@
     "anilist_id": 185778
   },
   "19402": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 354198,
+    "tvdb_season": 0,
+    "tvdb_epoffset": 14,
     "mal_id": 61903,
     "anilist_id": 194884
   },
