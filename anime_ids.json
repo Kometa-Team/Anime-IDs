@@ -83193,9 +83193,6 @@
   "17988": {
     "tvdb_epoffset": 0
   },
-  "17989": {
-    "tvdb_epoffset": 0
-  },
   "17990": {
     "tvdb_epoffset": 0,
     "mal_id": 55034,
@@ -92897,6 +92894,45 @@
     "tvdb_epoffset": 0
   },
   "20004": {
+    "tvdb_epoffset": 0
+  },
+  "20005": {
+    "tvdb_epoffset": 0
+  },
+  "20006": {
+    "tvdb_epoffset": 0
+  },
+  "20007": {
+    "tvdb_epoffset": 0
+  },
+  "20008": {
+    "tvdb_epoffset": 0
+  },
+  "20009": {
+    "tvdb_epoffset": 0
+  },
+  "20010": {
+    "tvdb_epoffset": 0
+  },
+  "20011": {
+    "tvdb_epoffset": 0
+  },
+  "20012": {
+    "tvdb_epoffset": 0
+  },
+  "20013": {
+    "tvdb_epoffset": 0
+  },
+  "20015": {
+    "tvdb_epoffset": 0
+  },
+  "20016": {
+    "tvdb_epoffset": 0
+  },
+  "20017": {
+    "tvdb_epoffset": 0
+  },
+  "20018": {
     "tvdb_epoffset": 0
   }
 }
