@@ -89468,9 +89468,6 @@
   "19228": {
     "tvdb_epoffset": 0
   },
-  "19229": {
-    "tvdb_epoffset": 0
-  },
   "19230": {
     "tvdb_id": 461683,
     "tvdb_season": 1,
@@ -93128,6 +93125,24 @@
     "tvdb_epoffset": 0
   },
   "20066": {
+    "tvdb_epoffset": 0
+  },
+  "20067": {
+    "tvdb_epoffset": 0
+  },
+  "20068": {
+    "tvdb_epoffset": 0
+  },
+  "20069": {
+    "tvdb_epoffset": 0
+  },
+  "20070": {
+    "tvdb_epoffset": 0
+  },
+  "20071": {
+    "tvdb_epoffset": 0
+  },
+  "20072": {
     "tvdb_epoffset": 0
   }
 }
