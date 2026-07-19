@@ -90510,6 +90510,8 @@
     "anilist_id": 195517
   },
   "19444": {
+    "tvdb_id": 431162,
+    "tvdb_season": 3,
     "tvdb_epoffset": 0,
     "mal_id": 61987,
     "anilist_id": 195516
@@ -91580,6 +91582,8 @@
     "anilist_id": 200929
   },
   "19671": {
+    "tvdb_id": 431162,
+    "tvdb_season": 4,
     "tvdb_epoffset": 0
   },
   "19672": {
@@ -92911,7 +92915,9 @@
     "anilist_id": 209876
   },
   "19975": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 377543,
+    "tvdb_season": 3,
+    "tvdb_epoffset": 12,
     "mal_id": 63824
   },
   "19976": {
