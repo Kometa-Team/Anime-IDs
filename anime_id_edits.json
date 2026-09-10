@@ -26,4 +26,24 @@
   "13472": {
     "mal_id": "36342,36343,36344"
   }
+  "19484": {
+  "tvdb_id": 465987,
+  "imdb_id": "tt41054252",
+  "tmdb_show_id": 296437,
+  "mal_id": 62078,
+  "anilist_id": 196218
+},
+  "19838": {
+  "tvdb_id": 452039,
+  "imdb_id": "tt32869308",
+  "tmdb_show_id": 297826,
+  "mal_id": 63316,
+  "anilist_id": 184356
+},
+  "19873": {
+  "tvdb_id": 473423,
+  "imdb_id": "tt39551330",
+  "tmdb_show_id": 312949,
+  "mal_id": 63403,
+  "anilist_id": 207141
 }
