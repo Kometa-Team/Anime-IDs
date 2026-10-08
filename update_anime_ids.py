@@ -62,23 +62,23 @@ for anime in html.fromstring(requests.get(anidb_url).content).xpath("//anime"):
         anime_dicts[anidb_id]["imdb_id"] = imdb_id
 
 
-anime-offline-database_url = "https://api.github.com/repos/cedya77/anime-offline-database/releases"
+anime_offline_database_url = "https://api.github.com/repos/cedya77/anime-offline-database/releases"
 logger.info("Scanning anime-offline-database")
-anime-offline-database_release_url = None
+anime_offline_database_release_url = None
 
 # Find the .jsonl asset
 try:
-    assets = requests.get(requests.get(anime-offline-database_url).json()[0]["assets_url"]).json()
+    assets = requests.get(requests.get(anime_offline_database_url).json()[0]["assets_url"]).json()
     for asset in assets:
         if asset["name"] == "anime-offline-database.jsonl":
-            anime-offline-database_release_url = asset["browser_download_url"]
+            anime_offline_database_release_url = asset["browser_download_url"]
             break
 except Exception as e:
     logger.error(f"Error finding anime-offline-database release: {e}")
 
-if anime-offline-database_release_url:
+if anime_offline_database_release_url:
     # Use iter_lines for .jsonl processing
-    with requests.get(anime-offline-database_release_url, stream=True) as r:
+    with requests.get(anime_offline_database_release_url, stream=True) as r:
         r.raise_for_status()
         for line in r.iter_lines():
             if not line:
