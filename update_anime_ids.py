@@ -62,23 +62,23 @@ for anime in html.fromstring(requests.get(anidb_url).content).xpath("//anime"):
         anime_dicts[anidb_id]["imdb_id"] = imdb_id
 
 
-manami_url = "https://api.github.com/repos/manami-project/anime-offline-database/releases"
-logger.info("Scanning Manami-Project")
-manami_release_url = None
+anime-offline-database_url = "https://api.github.com/repos/cedya77/anime-offline-database/releases"
+logger.info("Scanning anime-offline-database")
+anime-offline-database_release_url = None
 
 # Find the .jsonl asset
 try:
-    assets = requests.get(requests.get(manami_url).json()[0]["assets_url"]).json()
+    assets = requests.get(requests.get(anime-offline-database_url).json()[0]["assets_url"]).json()
     for asset in assets:
         if asset["name"] == "anime-offline-database.jsonl":
-            manami_release_url = asset["browser_download_url"]
+            anime-offline-database_release_url = asset["browser_download_url"]
             break
 except Exception as e:
-    logger.error(f"Error finding Manami release: {e}")
+    logger.error(f"Error finding anime-offline-database release: {e}")
 
-if manami_release_url:
+if anime-offline-database_release_url:
     # Use iter_lines for .jsonl processing
-    with requests.get(manami_release_url, stream=True) as r:
+    with requests.get(anime-offline-database_release_url, stream=True) as r:
         r.raise_for_status()
         for line in r.iter_lines():
             if not line:
@@ -115,7 +115,7 @@ if manami_release_url:
                 if anilist_id:
                     anime_dicts[anidb_id]["anilist_id"] = anilist_id
 else:
-    logger.warning("Could not find anime-offline-database.jsonl in Manami releases")
+    logger.warning("Could not find anime-offline-database.jsonl in anime-offline-database releases")
 
 """
 logger.info("Scanning AnimeAggregations")
