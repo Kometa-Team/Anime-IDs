@@ -90039,7 +90039,9 @@
     "anilist_id": 187362
   },
   "19280": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 418665,
+    "tvdb_season": 0,
+    "tvdb_epoffset": 1,
     "mal_id": 61440,
     "anilist_id": 190054
   },
@@ -94142,7 +94144,9 @@
     "anilist_id": 213657
   },
   "20143": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 273005,
+    "tvdb_season": 4,
+    "tvdb_epoffset": 13,
     "mal_id": 64505,
     "anilist_id": 213658
   },
