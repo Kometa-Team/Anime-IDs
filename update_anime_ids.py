@@ -63,27 +63,43 @@ for anime in html.fromstring(requests.get(anidb_url).content).xpath("//anime"):
 
 
 anime_offline_database_url = "https://api.github.com/repos/cedya77/anime-offline-database/releases"
+aod_asset_name = "anime-offline-database.jsonl"
 logger.info("Scanning anime-offline-database")
 anime_offline_database_release_url = None
+releases = []
 
-# Find the .jsonl asset
+# Find the newest release that actually has the .jsonl (the repo also publishes
+# other releases, like "fillers", that don't)
 try:
-    assets = requests.get(requests.get(anime_offline_database_url).json()[0]["assets_url"]).json()
-    for asset in assets:
-        if asset["name"] == "anime-offline-database.jsonl":
-            anime_offline_database_release_url = asset["browser_download_url"]
-            break
+    resp = requests.get(anime_offline_database_url, params={"per_page": 10}, timeout=30)
+    if resp.status_code != 200:
+        logger.error(f"GitHub API returned HTTP {resp.status_code}: {resp.text[:300]}")
+    else:
+        releases = resp.json()
+        for release in releases:
+            if release.get("draft"):
+                continue
+            asset = next((a for a in release.get("assets", []) if a["name"] == aod_asset_name), None)
+            if asset:
+                anime_offline_database_release_url = asset["browser_download_url"]
+                logger.info(f"Using {aod_asset_name} from release {release.get('tag_name')}")
+                break
 except Exception as e:
-    logger.error(f"Error finding anime-offline-database release: {e}")
+    logger.error(f"Error finding anime-offline-database release: {e!r}")
+
+if anime_offline_database_release_url is None and not releases:
+    # API unreachable or rate-limited: fall back to the release GitHub marks as "Latest"
+    anime_offline_database_release_url = f"https://github.com/cedya77/anime-offline-database/releases/latest/download/{aod_asset_name}"
+    logger.info("Falling back to the direct 'latest' download URL")
 
 if anime_offline_database_release_url:
     # Use iter_lines for .jsonl processing
-    with requests.get(anime_offline_database_release_url, stream=True) as r:
+    with requests.get(anime_offline_database_release_url, stream=True, timeout=120) as r:
         r.raise_for_status()
         for line in r.iter_lines():
             if not line:
                 continue
-            
+
             try:
                 anime = json.loads(line)
             except json.JSONDecodeError:
@@ -108,7 +124,7 @@ if anime_offline_database_release_url:
                     try:
                         anilist_id = int((source.partition("anime/")[2]))
                     except ValueError: pass
-            
+
             if anidb_id and anidb_id in anime_dicts:
                 if mal_id:
                     anime_dicts[anidb_id]["mal_id"] = mal_id
