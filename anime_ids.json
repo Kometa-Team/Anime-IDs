@@ -64302,7 +64302,8 @@
   "13972": {
     "tvdb_id": 349733,
     "tvdb_season": 1,
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 37585
   },
   "13973": {
     "tvdb_id": 382868,
@@ -89508,7 +89509,8 @@
     "anilist_id": 186794
   },
   "19163": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 61023
   },
   "19164": {
     "tvdb_epoffset": 0
@@ -90305,7 +90307,8 @@
   "19330": {
     "tvdb_id": 463638,
     "tvdb_season": 1,
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 61694
   },
   "19331": {
     "tvdb_epoffset": 0,
@@ -94706,7 +94709,9 @@
     "tvdb_epoffset": 0
   },
   "20275": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 58630,
+    "anilist_id": 185644
   },
   "20276": {
     "tvdb_epoffset": 0
@@ -95302,7 +95307,9 @@
     "tvdb_epoffset": 0
   },
   "20448": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 65107,
+    "anilist_id": 217717
   },
   "20449": {
     "tvdb_epoffset": 0,
@@ -95318,10 +95325,14 @@
     "anilist_id": 216860
   },
   "20452": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 64211,
+    "anilist_id": 217787
   },
   "20453": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 65106,
+    "anilist_id": 217715
   },
   "20454": {
     "tvdb_epoffset": 0,
@@ -95332,7 +95343,9 @@
     "tvdb_epoffset": 0
   },
   "20456": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 65118,
+    "anilist_id": 217841
   },
   "20457": {
     "tvdb_epoffset": 0
@@ -95342,13 +95355,17 @@
     "mal_id": 65141
   },
   "20459": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 65145,
+    "anilist_id": 218025
   },
   "20460": {
     "tvdb_epoffset": 0
   },
   "20461": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 65147,
+    "anilist_id": 218040
   },
   "20462": {
     "tvdb_epoffset": 0,
@@ -95356,7 +95373,9 @@
     "anilist_id": 218099
   },
   "20463": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 64717,
+    "anilist_id": 214593
   },
   "20464": {
     "tvdb_epoffset": 0
