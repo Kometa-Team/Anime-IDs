@@ -91704,7 +91704,10 @@
     "anilist_id": 199337
   },
   "19617": {
-    "tvdb_epoffset": 0,
+    "tvdb_id": 345596,
+    "tvdb_season": 0,
+    "tvdb_epoffset": 8,
+    "imdb_id": "tt39927807",
     "mal_id": 62582,
     "anilist_id": 199340
   },
