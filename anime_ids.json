@@ -73823,7 +73823,9 @@
     "anilist_id": 126897
   },
   "15913": {
-    "tvdb_epoffset": 0
+    "tvdb_epoffset": 0,
+    "mal_id": 16830,
+    "anilist_id": 16830
   },
   "15914": {
     "tvdb_id": 397934,
