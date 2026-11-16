@@ -36656,7 +36656,7 @@
   },
   "8039": {
     "tvdb_id": 247805,
-    "tvdb_season": 1,
+    "tvdb_season": -1,
     "tvdb_epoffset": 0,
     "mal_id": 9863,
     "anilist_id": 9863
